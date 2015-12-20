@@ -1,5 +1,6 @@
 # Node.js + Express.js + Dependency Injection + Logging + Config + Unit Test
 
+Could be used as a scaffolding for Express.js application.
 - Node.js
 - Express.js
 - [Intravenous](http://www.royjacobs.org/intravenous/) as a dependency injection library
@@ -26,6 +27,10 @@ npm src\app.js
 mocha
 ```
 
-## To-Do
+## To-Do & Fix-Me
 
-- packaging using gulp
+- Currently, `logProvider` and `logger` have to be passed to `server.start()`. Get rid of `logProvider` if possible.
+- Most of the code in `app.js` has to be duplicated in `unit-test.js`
+- Use Promises instead of callback in the router and controller.
+- Multiple controllers.
+- Packaging using `gulp`.
