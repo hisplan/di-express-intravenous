@@ -1,0 +1,21 @@
+{
+  "appenders": [{
+    "type": "dateFile",
+    "category": "app",
+    "filename": "app.log",
+    "pattern": ".yyyy-MM-dd-hh.log",
+    "alwaysIncludePattern": false
+  }, {
+    "type": "console",
+    "category": "app"
+  }, {
+    "type": "dateFile",
+    "category": "http",
+    "filename": "http.log",
+    "pattern": ".yyyy-MM-dd.log",
+    "alwaysIncludePattern": false
+  }, {
+    "type": "console",
+    "category": "http"
+  }]
+}
