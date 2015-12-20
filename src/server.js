@@ -3,8 +3,9 @@
 var express = require('express'),
     compression = require('compression');
 
-var Server = function (router, logger) {
+var Server = function (router, config, logger) {
     this.router = router;
+    this.config = config;
     this.appLogger = logger;
 };
 
@@ -26,9 +27,9 @@ Server.prototype.start = function (logProvider, httpLogger, staticRootDir) {
 
     this.router.setup(app);
 
-    var port = 3000;
+    var port = this.config.get('http:port');
     
-    this.server = app.listen(3000);
+    this.server = app.listen(port);
     
     this.appLogger.info('Listening on port %d', port);
 
@@ -39,5 +40,5 @@ Server.prototype.stop = function () {
     this.server.close();
 };
 
-Server.$inject = ['router', 'logger'];
+Server.$inject = ['router', 'config', 'logger'];
 module.exports = Server;

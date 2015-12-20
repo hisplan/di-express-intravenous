@@ -10,10 +10,16 @@ var request = require('supertest'),
     should = chai.should();
 
 var path = require('path'),
-    log4js = require('log4js');
+    log4js = require('log4js'),
+    nconf = require('nconf');
 
 // remove console log
 log4js.configure({});
+
+// load app config.
+nconf.file({
+  file: 'conf/app-config.json'
+});
 
 var server = require('../src/server'),
     router = require('../src/router'),
@@ -26,6 +32,7 @@ var container = intravenous.create();
 container.register('server', server);
 container.register('router', router);
 container.register('logger', log4js.getLogger());
+container.register('config', nconf);
 container.register('controller.example', exampleController);
 
 var testServer = container.get('server');
