@@ -1,8 +1,9 @@
-# Node.js + Express.js + Dependency Injection + Config + Unit Test
+# Node.js + Express.js + Dependency Injection + Logging + Config + Unit Test
 
 - Node.js
 - Express.js
-- Intravenous as a dependency injection library
+- [Intravenous](http://www.royjacobs.org/intravenous/) as a dependency injection library
+- [log4js-node](https://github.com/nomiddlename/log4js-node/blob/master/examples/example.js) as a logging library
 - [nconf](https://github.com/indexzero/nconf) as a configuration library
 - Unit testing
     - Mocha as a test runner
