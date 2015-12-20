@@ -20,7 +20,7 @@ log4js.configure(path.join(appRootDir, '/conf/log4j-config.json'), {
 
 // load app config.
 nconf.file({
-  file: 'conf/app-config.json'
+    file: 'conf/app-config.json'
 });
 
 var appLogger = log4js.getLogger('app');

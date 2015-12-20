@@ -18,7 +18,7 @@ log4js.configure({});
 
 // load app config.
 nconf.file({
-  file: 'conf/app-config.json'
+    file: 'conf/app-config.json'
 });
 
 var server = require('../src/server'),
@@ -70,9 +70,9 @@ describe('server', function () {
             request(app)
                 .get('/test')
                 .expect(404)
-                .end(function(err,res) {
-                   if (err) return done(err);
-                   done(); 
+                .end(function (err, res) {
+                    if (err) return done(err);
+                    done();
                 });
         });
 

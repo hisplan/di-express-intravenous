@@ -28,9 +28,9 @@ Server.prototype.start = function (logProvider, httpLogger, staticRootDir) {
     this.router.setup(app);
 
     var port = this.config.get('http:port');
-    
+
     this.server = app.listen(port);
-    
+
     this.appLogger.info('Listening on port %d', port);
 
     return app;
