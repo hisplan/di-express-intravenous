@@ -6,7 +6,7 @@ var Example = function (logger) {
 
 Example.prototype.greet = function (params, callback) {
 
-    this.logger.info('name: %s', params.name);
+    this.logger.info('Greeted "%s"', params.name);
 
     callback({
         "message": "Hello, " + params.name
